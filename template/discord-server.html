@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+   <section class="home discord__home" id="home">
+      <div>
+         <div class="content index">
+            <h1 class="home-heading">discord serverga
+               xush kelibsiz !</h1>
+
+            <br>
+            <p class="onlinePage">o’zbekiston bo’ylab minga yaqin
+               traderlarni jamlagan trading community</p>
+            <br>
+
+         </div>
+         <div class="home__info">
+            <div class="home__info-box">
+               <h1>6ta</h1>
+               <p>bo'limda kunlik analizlar</p>
+            </div>
+            <div class="home__info-box">
+               <h1>7ta</h1>
+               <p>bo'limda online darslar</p>
+            </div>
+            <div class="home__info-box">
+               <h1>1000+</h1>
+               <p>discord foydalanuvchi</p>
+            </div>
+         </div>
+      </div>
+      <img src="{% static 'image/Noutbuk-mid.png' %}" alt="">
+   </section>
+
+   <section class="info" id="info">
+      <img src="{% static 'image/polni-logosi-yoq.png' %}" alt="">
+      <div class="info__content">
+         <h1><span>discord</span> haqida</h1>
+         <p style="font-size: 23px; font-weight: 700; color: #fff; margin-top: 25px;">premium discord server: </p>
+         <p>Bu yerda siz barcha yoshdagi va tajribali treyderlardan o‘rganishingiz va ular bilan muntazam aloqada
+            bo'lib, hamfikr
+            jamoa bilan muvaffaqiyatga erishish yo‘lini yanada
+            qulayroq qiling.</p>
+
+
+         <h2>
+
+            <span>
+               -Kunlik Sessiyalar + Savdo Recap videolar
+
+            </span>
+             <span> -Kunlik Analizlar</span>
+            <span>-Savdo g'oyalaringizni Pro Treyderlar bilan almashishi</span>
+            <span>-24/7 Mentorlar qo'llab-quvvatlashi</span>
+         </h2>
+      </div>
+   </section>
+
+   <section class="price" id="price">
+      <p class="price__subtitle fsz lh" style="color: #fff; font-size: 20px;">discord server</p>
+      <h1 class="price__title before">narxlar</h1>
+      <ul class="price__list">
+          {% for p in posts %}
+         <li class="price__item">
+            <h3>oddiy</h3>
+            <p>ta'rif</p>
+            <h1>${{p.simple_price}}</h1>
+            <h4>1 oylik to'lov</h4>
+            <a href="{{p.name}}">boshlash</a>
+         </li>
+         <li class="price__item price__item-premium">
+            <h3>premium</h3>
+            <p>ta'rif</p>
+            <h1>${{p.premium}}</h1>
+            <h4>3 oylik to'lov</h4>
+            <a href="{{p.name}}">boshlash</a>
+         </li>
+         <li class="price__item">
+            <h3>platinum</h3>
+            <p>ta'rif</p>
+            <h1>${{p.platinum}}</h1>
+            <h4>6 oylik to'lov</h4>
+            <a href="{{p.name}}">boshlash</a>
+         </li>
+          {% endfor %}
+      </ul>
+   </section>
+
+{% endblock %}

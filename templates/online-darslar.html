@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+
+   <section class="home home-online " id="home">
+      <div>
+
+         <div class="content">
+            <h1 class="home-heading">yuqori sifatdagi <br>
+            online ta’lim</h1>
+            <p class="onlinePage">3 yillik tajribaga asoslanga mukammal SMC <br>
+            trading bo’yicha online darsliklar jamlanmasi</p>
+            <br>
+         </div>
+         <div class="home__info online__info">
+            <div class="home__info-box online-box ">
+               <h1>30+</h1>
+               <p>mukammal darslar</p>
+            </div>
+            <div class="home__info-box online-box">
+               <h1>12 oy+</h1>
+               <p>mentorlar yordami</p>
+            </div>
+            <div class="home__info-box online-box">
+               <h1>35+</h1>
+               <p>soat dan  <br> oshiq darslar to'plami</p>
+            </div>
+         </div>
+      </div>
+      <img src="{% static 'image/Noutbuk.png' %}" alt="">
+   </section>
+   <section class="info online_info" id="info">
+      <img   src="{% static 'image/disk-toplam.png' %}" alt="">
+      <div class="info__content">
+         <h1><span>kurs</span> haqida</h1>
+         <h2>online trading kurs:</h2>
+         <p>tajribali mutaxxasislarlardan chuqur texnik tahlilni qanday amalga oshirishni va turli bozor sharoitlaridan
+            yillar davomida qay tarzda davomli foyda olishini vaqtni tejasgan holda o'rganing va profitli savdo
+            jarayoningizni tezlashtiring.</p>
+         <p>-daromadingizni oshiring <br>
+            -bilmingizni kengaytiring <br>
+            -ish vaqtingizni qisqartiring</p>
+      </div>
+   </section>
+
+   <section class="price" id="price">
+      <p class="price__subtitle fsz price__text">online dars</p>
+      <h1   class=" price__title before team__center">narxlar</h1>
+      <ul class="price__list">
+         {% for p in post %}
+         <li class="price__item">
+            <h3>oddiy</h3>
+            <p>ta'rif</p>
+            <h1>${{p.simple_price}}</h1>
+            <h4>1 martalik to'lov</h4>
+            <a href="{{p.name}}">boshlash</a>
+         </li>
+         <li class="price__item price__item-premium">
+            <h3>premium</h3>
+            <p>ta'rif</p>
+            <h1>${{p.premium}}</h1>
+            <h4>1 martalik to'lov</h4>
+            <a href="{{p.name}}">boshlash</a>
+         </li>
+         <li class="price__item">
+            <h3>platinum</h3>
+            <p>ta'rif</p>
+            <h1>${{p.platinum}}</h1>
+            <h4>1 martalik to'lov</h4>
+            <a href="{{p.name}}">boshlash</a>
+         </li>
+         {% endfor %}
+      </ul>
+   </section>
+
+{% endblock %}

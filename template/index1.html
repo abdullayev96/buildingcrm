@@ -1,0 +1,269 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+   <section class="home" id="home">
+      <div>
+         <div class="content">
+            <h1 class="home-heading">Dunyo miqyosidagi trading jamiyat</h1>
+            <p>biz bilan trading bilimlaringizni yangi darajaga olib chiqing</p>
+         </div>
+         <div class="home__link">
+            <a href="{% url 'more' %}">Batafsil <i class="fa-solid fa-arrow-right-long fa-beat"></i></a>
+            <a href="#">Lot hisoblash <i class="fa-solid fa-arrow-right-long fa-beat"></i></a>
+         </div>
+      </div>
+      <img class="home__outline" src="{% static 'image/opp.png' %}" alt="">
+      <img src="{% static 'image/bro.png' %}" alt="">
+      <img class="logo-absolute" src="{% static 'image/2.png' %}" alt="">
+      <div class="line"></div>
+
+   </section>
+
+   <section class="services" id="services">
+      <h1 class="services__title">
+         Bizning xizmatlar
+      </h1>
+      <ul class="services__list">
+         <li class="services__item">
+            <img src="{% static 'image/shlyapa.png' %}" alt="">
+            <h2>online darslar</h2>
+            <p>mexanik strategiya</p>
+            <p>11ta modul</p>
+            <p>interaktiv mashqlar</p>
+            <p>grafikda misollar</p>
+            <div class="services__link"><a href="{% url 'online' %}">Batafsil <i class="fa-solid fa-arrow-right-long fa-beat"></i></a></div>
+         </li>
+         <li class="services__item">
+            <img src="{% static 'image/discord.png' %}" alt="">
+            <h2>discord server</h2>
+            <p>mexanik strategiya</p>
+            <p>11ta modul</p>
+            <p>interaktiv mashqlar</p>
+            <p>grafikda misollar</p>
+            <div class="services__link"><a href="{% url 'discord' %}">Batafsil <i class="fa-solid fa-arrow-right-long fa-beat"></i></a></div>
+         </li>
+         <li class="services__item">
+            <img src="{% static 'image/robo.png' %}" alt="">
+            <h2>savdo robot</h2>
+            <p>mexanik strategiya</p>
+            <p>11ta modul</p>
+            <p>interaktiv mashqlar</p>
+            <p>grafikda misollar</p>
+            <div class="services__link"><a href="{% url 'savdo' %}">Batafsil <i class="fa-solid fa-arrow-right-long fa-beat"></i></a></div>
+         </li>
+      </ul>
+   </section>
+
+   <div class="discord">
+      <div class="discord__left">
+         <h1 class="discord__title outline">
+            mukammal
+         </h1><br>
+         <h1 class="discord__title discord__title-bg outline">
+            discord
+         </h1><br>
+         <h1 class="discord__title outline">
+            server
+         </h1><br>
+         <div class="discord__members">
+            {% for p in changes %}
+            <h1 class="discord__members-title">
+               {{p.name}}++</h1>
+            {% endfor %}
+            <p>members</p>
+         </div>
+      </div>
+      <div class="discord__right">
+         <img src="{% static 'image/obshi.png' %}" alt="">
+      </div>
+   </div>
+
+   <section class="team" id="team">
+      <p class="price__subtitle">Bizning jamoa</p>
+      <h1 class="price__title">o'z ishining ustalari</h1>
+      <ul class="team__list">
+         <li class="team__item">
+            <img src="{% static 'image/bro2.png' %}" alt="" width="270">
+            <h1>Doniyor Niyozov</h1>
+            <h2>ceo, founder</h2>
+            <div class="team__item-social">
+               <a href="#"><i class="fa-brands fa-instagram"></i></a>
+               <a href="#"><i class="fa-brands fa-telegram"></i></a>
+               <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+         </li>
+         <li class="team__item">
+            <img src="{% static 'image/bro3.png' %}" alt="" width="240">
+            <h1>Uktam kucharov</h1>
+            <h2>brand developer</h2>
+            <div class="team__item-social">
+               <a href="#"><i class="fa-brands fa-instagram"></i></a>
+               <a href="#"><i class="fa-brands fa-telegram"></i></a>
+               <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+         </li>
+      </ul>
+   </section>
+
+   <section class="result" id="result">
+      <p class="price__subtitle">Noxon capital</p>
+      <h1 class="price__title">Bizning natijalar</h1>
+      <ul class="result__list">
+         {% for r in results %}
+         <li class="result__item">
+          <h1>{{r.number}}++</h1>
+            <p>{{r.name}}</p>
+         </li>
+         {% endfor %}
+      </ul>
+      <ul class="hamkor__list">
+         <li class="hamkor__item">
+            <img src="{% static 'image/fxm.png' %}" alt="">
+         </li>
+         <li class="hamkor__item">
+            <img src="{% static 'image/mt.png' %}" alt="">
+         </li>
+         <li class="hamkor__item">
+            <img src="{% static 'image/mym.png' %}" alt="">
+         </li>
+         <li class="hamkor__item">
+            <img src="{% static 'image/XM-BROKER-copy.png' %}" alt="">
+         </li>
+      </ul>
+   </section>
+
+   <section class="connect">
+      <h1 class="price__title">Biz bilan bog'lanish</h1>
+      <div class="connect__wrapper">
+         <div>
+            <h2>Bizga xabar jo'nating</h2>
+            <p>har qanday savol-takliflaringizni bizga yozib qoldiring. imkon qadar siz bilan tezroq aloqaga chiqamiz</p>
+            <ul class="connect__list">
+                {% for p in place %}
+               <li class="connect__item">
+                  <img src="{% static 'image/location.png' %}" alt="">
+                  <div>
+                     <h3>manzil:</h3>
+                     <h4>{{p.name}}</h4>
+                  </div>
+               </li>
+               <li class="connect__item">
+                  <img src="image/fax.png" alt="">
+                  <div>
+                     <h3>mail:</h3>
+                     <h4>{{p.title}}</h4>
+                  </div>
+               </li>
+               <li class="connect__item">
+                  <img src="{% static 'image/fwx.jpg' %}" alt="">
+                  <div>
+                     <h3>telefon:</h3>
+                     <h4>+{{p.number}}</h4>
+                  </div>
+               </li>
+               {% endfor %}
+            </ul>
+         </div>
+         <form method="post" class="connect__form">
+             {% csrf_token  %}
+            <input class="name" type="text" name="name" placeholder="Ismingiz">
+            <input class="number" type="number" name="phone" placeholder="Telefon raqamingiz">
+            <input class="theme" type="text" name="subject" placeholder="Mavzu">
+            <textarea class="message" name="message" cols="30" rows="10" placeholder="Sizning xabaringiz"></textarea>
+            <div class="home__link">
+               <button>Jo'natish <i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+         </form>
+      </div>
+   </section>
+{% endblock  %}
+
+
+<!---------
+
+<!DOCTYPE html>
+<html  >
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.6.8, mobirise.com">
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image:src" content="">
+  <meta property="og:image" content="">
+  <meta name="twitter:title" content="Home">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="">
+
+
+  <title>Sayt</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,400;1,700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,400;1,700&display=swap&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+
+
+
+
+</head>
+<body>
+
+  <section data-bs-version="5.1" class="countdown4 cid-tGg4YBPLQo mbr-fullscreen" id="countdown4-0">
+
+
+
+    <div class="mbr-overlay" style="opacity: 0.1; background-color: rgb(68, 121, 217);">
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h3 class="mbr-section-title mb-5 align-center mbr-fonts-style display-2">
+                    <strong>Tez orada qaytamiz!</strong></h3>
+
+                <div class="countdown-cont align-center mb-5">
+                    <div class="daysCountdown col-xs-3 col-sm-3 col-md-3" title="Kun"></div>
+                    <div class="hoursCountdown col-xs-3 col-sm-3 col-md-3" title="Soat"></div>
+                    <div class="minutesCountdown col-xs-3 col-sm-3 col-md-3" title="Daqiqa"></div>
+                    <div class="secondsCountdown col-xs-3 col-sm-3 col-md-3" title="Soniya"></div>
+                    <div class="countdown" data-due-date="2023/07/01"></div>
+                </div>
+                <p class="mbr-text mb-5 align-center mbr-fonts-style display-7">Bizni kuzatish uchun ijtimoiy sahifalarimizga obuna bo'ling!</p>
+                <div class="icons-menu row justify-content-center display-7">
+
+
+
+
+                <div class="soc-item col-auto">
+                        <a href="https://www.instagram.com/noxonfx/?igshid=YmMyMTA2M2Y=" target="_blank" class="social__link">
+                            <span class="mbr-iconfont socicon-instagram socicon"></span>
+                        </a>
+                    </div><div class="soc-item col-auto">
+                        <a href="https://discord.com/invite/yRDppwJy3h" target="_blank" class="social__link">
+                            <span class="mbr-iconfont socicon-twitter socicon"></span>
+                        </a>
+                    </div><div class="soc-item col-auto">
+                        <a href="https://facebook.com/Mobirise/" target="_blank" class="social__link">
+                            <span class="mbr-iconfont socicon socicon-facebook"></span>
+                        </a>
+                    </div><div class="soc-item col-auto">
+                        <a href="https://www.youtube.com/@noxonfx" target="_blank" class="social__link">
+                            <span class="mbr-iconfont socicon-youtube socicon"></span>
+                        </a>
+                    </div></div>
+
+            </div>
+        </div>
+    </div>
+</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/2786616" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">From &#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/web-design-program.html"> Noxon Team </a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/countdown/countdown.js"></script>  <script src="assets/theme/js/script.js"></script>
+
+
+</body>
+</html>
